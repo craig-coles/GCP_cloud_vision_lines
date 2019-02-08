@@ -39,20 +39,20 @@ You should get a response that looks like the following
 [ 
   { text: 'Wahaca ', // the text it found
     coords:
-     { tl: [Object], // the top left coord of the line
-       tr: [Object], // the top right coord of the line
-       br: [Object], // the bottom right coord of the line
-       bl: [Object], // the bottom left coord of the line
+     { tl: {"x":516,"y":107}, // the top left coord of the line
+       tr: {"x":636,"y":107}, // the top right coord of the line
+       br: {"x":636,"y":155}, // the bottom right coord of the line
+       bl: {"x":516,"y":155}, // the bottom left coord of the line
        w: 120, // the width dimension of the line
        h: 48 // the height dimension of the line
      } 
   },
   { text: '19 - 23 Charlotte Street ',
     coords:
-     { tl: [Object],
-       tr: [Object],
-       br: [Object],
-       bl: [Object],
+     { tl: {"x":330,"y":156},
+       tr: {"x":813,"y":156},
+       br: {"x":813,"y":207},
+       bl: {"x":330,"y":207},
        w: 483,
        h: 51 
      }
