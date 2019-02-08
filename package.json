@@ -1,0 +1,29 @@
+{
+  "name": "gcp_cloud_vision_lines",
+  "version": "1.0.0",
+  "description": "This utility breaks down a full text annotation response from the Google cloud vision API into a neatly parsed Array with each element representing a single line of text, with coords and height and width dimensions.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craig-coles/GCP_cloud_vision_lines.git"
+  },
+  "keywords": [
+    "GCP",
+    "cloud",
+    "vision",
+    "lines",
+    "OCR",
+    "google",
+    "cloud",
+    "platform"
+  ],
+  "author": "Craig Coles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craig-coles/GCP_cloud_vision_lines/issues"
+  },
+  "homepage": "https://github.com/craig-coles/GCP_cloud_vision_lines#readme"
+}
