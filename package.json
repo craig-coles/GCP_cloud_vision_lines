@@ -1,6 +1,6 @@
 {
   "name": "gcp_cloud_vision_lines",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This utility breaks down a full text annotation response from the Google cloud vision API into a neatly parsed Array with each element representing a single line of text, with coords and height and width dimensions.",
   "main": "src/index.js",
   "scripts": {
