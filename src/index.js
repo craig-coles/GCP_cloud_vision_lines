@@ -1,16 +1,16 @@
-const arrayFlatten = require('array-flatten');
+const arrayFlatten = require("array-flatten");
 
-const SPACE = 'SPACE';
-const EOL_SURE_SPACE = 'EOL_SURE_SPACE';
-const LINE_BREAK = 'LINE_BREAK';
+const SPACE = "SPACE";
+const EOL_SURE_SPACE = "EOL_SURE_SPACE";
+const LINE_BREAK = "LINE_BREAK";
 
-module.exports = { cloudVisionLines };
+exports = module.exports = { cloudVisionLines };
 
 function cloudVisionLines(fullTextAnnotation) {
   const wordsObjects = buildWordObjectsFromSymbols(
     getWordsFromParagraphs(
-      getParagraphsFromTextBlocks(getBlocksFromTextObj(fullTextAnnotation)),
-    ),
+      getParagraphsFromTextBlocks(getBlocksFromTextObj(fullTextAnnotation))
+    )
   );
 
   const lines = buildLinesFromWordObjects(wordsObjects);
@@ -65,7 +65,7 @@ function buildWordObjectsFromSymbols(words) {
           text: symbol.text,
           coords: symbol.boundingBox.vertices,
           word,
-          break: hasLineBreak,
+          break: hasLineBreak
         };
       }
       return { text: symbol.text, coords: symbol.boundingBox.vertices };
@@ -90,7 +90,7 @@ function getLineDimensionsAndCoords(arrayOfCoords) {
 function buildLinesFromWordObjects(wordsObj) {
   let storage = [];
   let breakFlag = false;
-  let line = '';
+  let line = "";
   let coords = [];
 
   wordsObj.forEach(letters => {
@@ -98,7 +98,7 @@ function buildLinesFromWordObjects(wordsObj) {
       line += letter.text;
       coords.push(letter.coords);
       if (letter.word) {
-        line += ' ';
+        line += " ";
       }
 
       if (letter.break) {
@@ -111,11 +111,11 @@ function buildLinesFromWordObjects(wordsObj) {
         text: line,
         coords: getLineDimensionsAndCoords([
           coords[0],
-          coords[coords.length - 1],
-        ]),
+          coords[coords.length - 1]
+        ])
       });
       breakFlag = false;
-      line = '';
+      line = "";
       coords = [];
     }
   });
