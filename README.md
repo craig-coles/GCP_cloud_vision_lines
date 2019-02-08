@@ -2,7 +2,7 @@
 A simple JS class for getting back lines of text with coords and dimensions from Google Cloud vision API
 
 **Please note:** This package is not affiliated with Google in any way. I saw a need for a service that provided
-parsing of the data returned from Google's Cloud Vision API and so I filled it.
+parsing of the data returned from Google's Cloud Vision API so I filled it.
 
 
 
