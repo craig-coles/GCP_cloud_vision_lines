@@ -28,7 +28,7 @@ const filePath = 'PATH/TO/THE/FILE/I/WANT/TO/ANALYZE';
 
 const [result] = await client.documentTextDetection(filePath);
 
-cloudVisionLines(result); // This is the function exported from the module :)
+cloudVisionLines(result.fullTextAnnotation); // This is the function exported from the module :)
 
 
 ```
