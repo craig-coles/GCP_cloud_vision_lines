@@ -4,18 +4,35 @@ const SPACE = "SPACE";
 const EOL_SURE_SPACE = "EOL_SURE_SPACE";
 const LINE_BREAK = "LINE_BREAK";
 
+function pipe(...fns) {
+  return x => {
+    return fns.reduce((v, f) => {
+      return f(v);
+    }, x);
+  };
+}
+
 exports = module.exports = { cloudVisionLines };
 
 function cloudVisionLines(fullTextAnnotation) {
-  const wordsObjects = buildWordObjectsFromSymbols(
-    getWordsFromParagraphs(
-      getParagraphsFromTextBlocks(getBlocksFromTextObj(fullTextAnnotation))
-    )
+  // const wordsObjects = buildWordObjectsFromSymbols(
+  //   getWordsFromParagraphs(
+  //     getParagraphsFromTextBlocks(getBlocksFromTextObj(fullTextAnnotation))
+  //   )
+  // );
+
+  // const lines = buildLinesFromWordObjects(wordsObjects);
+
+  const lineObjects = pipe(
+    getBlocksFromTextObj,
+    getParagraphsFromTextBlocks,
+    getWordsFromParagraphs,
+    buildWordObjectsFromSymbols,
+    buildLinesFromWordObjects
   );
 
-  const lines = buildLinesFromWordObjects(wordsObjects);
-
-  return lines;
+  //return lines;
+  return lineObjects(fullTextAnnotation);
 }
 
 function getBlocksFromTextObj(fullTextAnnotation) {
