@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/craig-coles/GCP_cloud_vision_lines/issues"
   },
-  "homepage": "https://github.com/craig-coles/GCP_cloud_vision_lines#readme"
+  "homepage": "https://github.com/craig-coles/GCP_cloud_vision_lines#readme",
+  "dependencies": {
+    "array-flatten": "^2.1.2"
+  }
 }
