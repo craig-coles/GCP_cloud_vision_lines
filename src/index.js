@@ -73,7 +73,7 @@ function isLineBreak(detectedBreakType) {
 function buildWordObjectsFromSymbols(words) {
   const wordsObj = words.map(elem => {
     return elem.symbols.map(symbol => {
-      if (symbol.property.detectedBreak) {
+      if (symbol && symbol.property && symbol.property.detectedBreak) {
         const word = isWord(symbol.property.detectedBreak.type);
 
         const hasLineBreak = isLineBreak(symbol.property.detectedBreak.type);
